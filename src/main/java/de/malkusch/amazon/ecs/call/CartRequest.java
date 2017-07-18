@@ -2,8 +2,8 @@ package de.malkusch.amazon.ecs.call;
 
 public interface CartRequest {
 
-	public String setHMAC(String hmac);
+	String setHMAC(String hmac);
 
-	public String setCartId(String cartId);
+	String setCartId(String cartId);
 
 }

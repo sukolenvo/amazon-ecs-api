@@ -43,7 +43,7 @@ public class ProductAdvertisingAPI {
 	 * Possible values for the parameter Condition
 	 */
 	static final public class Condition {
-		final public static String NEW = "NEW";
+		final public static String NEW = "New";
 		final public static String USED = "Used";
 		final public static String COLLECTIBLE = "Collectible";
 		final public static String REFURBISHED = "Refurbished";

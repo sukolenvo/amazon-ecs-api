@@ -16,11 +16,11 @@ abstract public class AbstractTest {
 
 	public AbstractTest() throws IOException {
 		Properties properties = new Properties();
-		properties.load(getClass().getResourceAsStream("/amazon.properties"));
+		properties.load(getClass().getClassLoader().getResourceAsStream("amazon.properties"));
 		configuration = new PropertiesConfiguration(properties);
 
 		api = new ProductAdvertisingAPI(configuration,
-				new AWSECommerceService().getAWSECommerceServicePortDE());
+				new AWSECommerceService().getAWSECommerceServicePortUS());
 	}
 
 }

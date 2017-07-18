@@ -4,6 +4,6 @@ import com.ECS.client.jax.Request;
 
 public interface ApiResponse {
 
-	public Request getRequest();
+	Request getRequest();
 
 }

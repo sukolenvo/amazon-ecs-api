@@ -77,7 +77,7 @@ public class TestAPI extends AbstractTest {
 	@Test
 	public void testBrowseNodeLookup() throws RequestException {
 		BrowseNodeLookupRequest request = new BrowseNodeLookupRequest();
-		request.getBrowseNodeId().add("78689031");
+		request.getBrowseNodeId().add("2619526011");
 
 		BrowseNodes nodes = api.getBrowseNodeLookup().call(request);
 
@@ -103,7 +103,7 @@ public class TestAPI extends AbstractTest {
 		Item item = new Item();
 		items.getItem().add(item);
 
-		item.setASIN("383102037X");
+		item.setASIN("B010S9N6OO");
 		item.setQuantity(BigInteger.valueOf(1));
 
 		Cart cart = api.getCartCreate().call(request);
@@ -130,7 +130,7 @@ public class TestAPI extends AbstractTest {
 			Item item = new Item();
 			items.getItem().add(item);
 
-			item.setASIN("383102037X");
+			item.setASIN("B010S9N6OO");
 			item.setQuantity(BigInteger.valueOf(1));
 
 			createdCart = api.getCartCreate().call(request);
@@ -160,9 +160,9 @@ public class TestAPI extends AbstractTest {
 			CartCreateRequest.Items items = new CartCreateRequest.Items();
 			request.setItems(items);
 
-			String[] asins = new String[] { "383102037X", "3831019592",
-					"3831091005", "3442380456", "3831020612", "3831018324",
-					"3833222476" };
+			String[] asins = new String[] { "B01DX3DLPG", "B010S9N6OO",
+					"B01KXTYI0A", "B072TT78M5", "B06Y19T64R", "B071Y6K79K",
+					"B071YHH79D" };
 			for (String asin : asins) {
 				Item item = new Item();
 				item.setASIN(asin);
@@ -229,7 +229,7 @@ public class TestAPI extends AbstractTest {
 			request.setItems(items);
 
 			Item item = new Item();
-			item.setASIN("383102037X");
+			item.setASIN("B010S9N6OO");
 			item.setQuantity(BigInteger.valueOf(3));
 			items.getItem().add(item);
 
@@ -240,14 +240,14 @@ public class TestAPI extends AbstractTest {
 		request.setItems(new CartAddRequest.Items());
 
 		CartAddRequest.Items.Item item = new CartAddRequest.Items.Item();
-		item.setASIN("3831019592");
+		item.setASIN("B01DX3DLPG");
 		item.setQuantity(BigInteger.valueOf(1));
 		request.getItems().getItem().add(item);
 
 		Cart addedCart = api.getCartAdd().call(request);
 
 		assertEquals(2, addedCart.getCartItems().getCartItem().size());
-		assertEquals("3831019592", addedCart.getCartItems().getCartItem()
+		assertEquals("B01DX3DLPG", addedCart.getCartItems().getCartItem()
 				.get(0).getASIN());
 	}
 
@@ -268,7 +268,7 @@ public class TestAPI extends AbstractTest {
 			request.setItems(items);
 
 			Item item = new Item();
-			item.setASIN("383102037X");
+			item.setASIN("B010S9N6OO");
 			item.setQuantity(BigInteger.valueOf(3));
 			items.getItem().add(item);
 
@@ -290,7 +290,7 @@ public class TestAPI extends AbstractTest {
 	@Test
 	public void testSimilarityLookup() throws RequestException {
 		SimilarityLookupRequest lookup = new SimilarityLookupRequest();
-		lookup.getItemId().add("383102037X");
+		lookup.getItemId().add("B010S9N6OO");
 
 		Items items = api.getSimilarityLookup().call(lookup);
 

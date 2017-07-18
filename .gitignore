@@ -1,6 +1,7 @@
 .classpath
 .settings
 .project
+.idea
 target
 src/test/resources/
 src/test/java/de/malkusch/amazon/ecs/test/sandbox

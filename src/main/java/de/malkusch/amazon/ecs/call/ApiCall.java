@@ -53,8 +53,8 @@ abstract public class ApiCall<CallType, RequestType, ResultType> {
 			CallType instance = callClass.newInstance();
 			ApiCallParameters<?> parameter = InterfaceDecorator.getProxy(
 					instance, ApiCallParameters.class);
-			parameter.setAssociateTag(api.getConfiguration().getAssociateTag());
-			parameter.setAWSAccessKeyId(api.getConfiguration().getAccessKey());
+			parameter.setAssociateTag(api.getAssociateTag());
+			parameter.setAWSAccessKeyId(api.getAccessKey());
 			return instance;
 
 		} catch (InstantiationException e) {

@@ -5,7 +5,7 @@ import java.util.Properties;
 /**
  * Provides configuration by Properties
  */
-public class PropertiesConfiguration implements Configuration {
+public class PropertiesConfiguration {
 
 	private Properties properties;
 

@@ -1,12 +1,7 @@
 package de.malkusch.amazon.ecs;
 
-import java.io.UnsupportedEncodingException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Set;
-import java.util.TimeZone;
+import de.malkusch.amazon.ecs.configuration.AmazonProductServiceConfig;
+import org.w3c.dom.Node;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -20,10 +15,13 @@ import javax.xml.soap.SOAPMessage;
 import javax.xml.ws.handler.MessageContext;
 import javax.xml.ws.handler.soap.SOAPHandler;
 import javax.xml.ws.handler.soap.SOAPMessageContext;
-
-import org.w3c.dom.Node;
-
-import de.malkusch.amazon.ecs.configuration.Authentication;
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Set;
+import java.util.TimeZone;
 
 /**
  * SoapHandler for adding the authentication headers to an Amazon Product
@@ -50,7 +48,7 @@ public class SignatureHandler implements SOAPHandler<SOAPMessageContext> {
 	private SimpleDateFormat dateFormat;
 	private SecretKeySpec secretKeySpec;
 
-	public SignatureHandler(Authentication authentication)
+	public SignatureHandler(AmazonProductServiceConfig authentication)
 			throws UnsupportedEncodingException {
 		this(authentication.getAccessKey(), authentication.getSecretKey());
 	}

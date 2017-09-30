@@ -1,4 +1,4 @@
-package de.malkusch.amazon.ecs;
+package de.malkusch.amazon.ecs.throttle;
 
 import com.ECS.client.jax.*;
 import com.google.common.util.concurrent.RateLimiter;
@@ -13,12 +13,12 @@ public class ThrottledAWSECommerseServicePort implements AWSECommerceServicePort
     private final AWSECommerceServicePortType wrapped;
     @Delegate
     private final BindingProvider provider;
-    private final RateLimiter rateLimit;
+    private final FixedRateLimiter rateLimit;
 
     public ThrottledAWSECommerseServicePort(AWSECommerceServicePortType portType, long throttle) {
         wrapped = portType;
         provider = (BindingProvider) portType;
-        rateLimit = RateLimiter.create(1000. / throttle);
+        rateLimit = new FixedRateLimiter(throttle);
     }
 
     public void itemSearch(String s, String s1, String s2, String s3, String s4,

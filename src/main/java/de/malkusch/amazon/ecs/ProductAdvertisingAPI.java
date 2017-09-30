@@ -3,7 +3,6 @@ package de.malkusch.amazon.ecs;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
-import javax.security.auth.login.Configuration;
 import javax.xml.ws.Binding;
 import javax.xml.ws.BindingProvider;
 import javax.xml.ws.handler.Handler;
@@ -24,6 +23,7 @@ import de.malkusch.amazon.ecs.call.ItemSeachCall;
 import de.malkusch.amazon.ecs.call.SimilarityLookupCall;
 import de.malkusch.amazon.ecs.configuration.AmazonProductServiceConfig;
 import de.malkusch.amazon.ecs.configuration.MarketplaceLocation;
+import de.malkusch.amazon.ecs.throttle.ThrottledAWSECommerseServicePort;
 
 /**
  * Convenient API to Amazon's Product Advertising SOAP-API

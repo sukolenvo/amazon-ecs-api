@@ -3,8 +3,6 @@ package de.malkusch.amazon.ecs.test;
 import java.io.IOException;
 import java.util.Properties;
 
-import com.ECS.client.jax.AWSECommerceService;
-
 import de.malkusch.amazon.ecs.ProductAdvertisingAPI;
 import de.malkusch.amazon.ecs.configuration.AmazonProductServiceConfig;
 import de.malkusch.amazon.ecs.configuration.MarketplaceLocation;

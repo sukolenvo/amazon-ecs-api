@@ -4,11 +4,10 @@ import java.util.List;
 
 import javax.xml.ws.Holder;
 
-import com.ECS.client.jax.Cart;
-import com.ECS.client.jax.CartClear;
-import com.ECS.client.jax.CartClearRequest;
-import com.ECS.client.jax.OperationRequest;
-
+import com.amazon.wsdl.Cart;
+import com.amazon.wsdl.CartClear;
+import com.amazon.wsdl.CartClearRequest;
+import com.amazon.wsdl.OperationRequest;
 import de.malkusch.amazon.ecs.ProductAdvertisingAPI;
 import de.malkusch.amazon.ecs.exception.RequestException;
 
@@ -20,7 +19,7 @@ public class CartClearCall extends CartCall<CartClear, CartClearRequest> {
 
 	@Override
 	protected void call(CartClear call,
-			Holder<OperationRequest> operationRequest, Holder<List<Cart>> result) {
+						Holder<OperationRequest> operationRequest, Holder<List<Cart>> result) {
 
 		api.getPort().cartClear(call.getMarketplaceDomain(),
 				call.getAWSAccessKeyId(), call.getAssociateTag(),

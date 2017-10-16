@@ -4,11 +4,10 @@ import java.util.List;
 
 import javax.xml.ws.Holder;
 
-import com.ECS.client.jax.Cart;
-import com.ECS.client.jax.CartCreate;
-import com.ECS.client.jax.CartCreateRequest;
-import com.ECS.client.jax.OperationRequest;
-
+import com.amazon.wsdl.Cart;
+import com.amazon.wsdl.CartCreate;
+import com.amazon.wsdl.CartCreateRequest;
+import com.amazon.wsdl.OperationRequest;
 import de.malkusch.amazon.ecs.ProductAdvertisingAPI;
 
 public class CartCreateCall extends
@@ -20,7 +19,7 @@ public class CartCreateCall extends
 
 	@Override
 	protected void call(CartCreate call,
-			Holder<OperationRequest> operationRequest, Holder<List<Cart>> result) {
+						Holder<OperationRequest> operationRequest, Holder<List<Cart>> result) {
 
 		api.getPort().cartCreate(call.getMarketplaceDomain(),
 				call.getAWSAccessKeyId(), call.getAssociateTag(),

@@ -1,6 +1,6 @@
 package de.malkusch.amazon.ecs.exception;
 
-import com.ECS.client.jax.Errors.Error;
+import com.amazon.wsdl.Errors;
 
 public class RequestErrorException extends RequestException {
 	
@@ -42,13 +42,13 @@ public class RequestErrorException extends RequestException {
 	
 	private static final long serialVersionUID = 790813551184073638L;
 	
-	private Error error;
+	private Errors.Error error;
 
-	public RequestErrorException(Error error) {
+	public RequestErrorException(Errors.Error error) {
 		this(error, null);
 	}
 
-	public RequestErrorException(Error error, Throwable cause) {
+	public RequestErrorException(Errors.Error error, Throwable cause) {
 		super(error.getMessage(), cause);
 		
 		this.error = error;

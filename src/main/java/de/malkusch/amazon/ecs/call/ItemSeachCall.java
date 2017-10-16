@@ -4,11 +4,11 @@ import java.util.List;
 
 import javax.xml.ws.Holder;
 
-import com.ECS.client.jax.ItemSearch;
-import com.ECS.client.jax.ItemSearchRequest;
-import com.ECS.client.jax.Items;
-import com.ECS.client.jax.OperationRequest;
 
+import com.amazon.wsdl.ItemSearch;
+import com.amazon.wsdl.ItemSearchRequest;
+import com.amazon.wsdl.Items;
+import com.amazon.wsdl.OperationRequest;
 import de.malkusch.amazon.ecs.ProductAdvertisingAPI;
 
 public class ItemSeachCall extends ItemCall<ItemSearch, ItemSearchRequest> {

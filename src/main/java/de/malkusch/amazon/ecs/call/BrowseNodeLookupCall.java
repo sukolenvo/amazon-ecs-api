@@ -4,11 +4,11 @@ import java.util.List;
 
 import javax.xml.ws.Holder;
 
-import com.ECS.client.jax.BrowseNodeLookup;
-import com.ECS.client.jax.BrowseNodeLookupRequest;
-import com.ECS.client.jax.BrowseNodes;
-import com.ECS.client.jax.OperationRequest;
 
+import com.amazon.wsdl.BrowseNodeLookup;
+import com.amazon.wsdl.BrowseNodeLookupRequest;
+import com.amazon.wsdl.BrowseNodes;
+import com.amazon.wsdl.OperationRequest;
 import de.malkusch.amazon.ecs.ProductAdvertisingAPI;
 
 public class BrowseNodeLookupCall extends

@@ -4,11 +4,11 @@ import java.util.List;
 
 import javax.xml.ws.Holder;
 
-import com.ECS.client.jax.Items;
-import com.ECS.client.jax.OperationRequest;
-import com.ECS.client.jax.SimilarityLookup;
-import com.ECS.client.jax.SimilarityLookupRequest;
 
+import com.amazon.wsdl.Items;
+import com.amazon.wsdl.OperationRequest;
+import com.amazon.wsdl.SimilarityLookup;
+import com.amazon.wsdl.SimilarityLookupRequest;
 import de.malkusch.amazon.ecs.ProductAdvertisingAPI;
 
 public class SimilarityLookupCall extends

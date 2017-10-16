@@ -1,7 +1,7 @@
 package de.malkusch.amazon.ecs.call;
 
-import com.ECS.client.jax.Items;
 
+import com.amazon.wsdl.Items;
 import de.malkusch.amazon.ecs.ProductAdvertisingAPI;
 
 public abstract class ItemCall<CallType, RequestType> extends

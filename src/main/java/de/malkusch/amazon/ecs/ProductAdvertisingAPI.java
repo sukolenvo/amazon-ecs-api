@@ -8,9 +8,9 @@ import javax.xml.ws.BindingProvider;
 import javax.xml.ws.handler.Handler;
 import javax.xml.ws.handler.MessageContext;
 
-import com.ECS.client.jax.AWSECommerceService;
-import com.ECS.client.jax.AWSECommerceServicePortType;
 
+import com.amazon.wsdl.AWSECommerceService;
+import com.amazon.wsdl.AWSECommerceServicePortType;
 import com.google.common.base.Preconditions;
 import de.malkusch.amazon.ecs.call.BrowseNodeLookupCall;
 import de.malkusch.amazon.ecs.call.CartAddCall;
@@ -26,17 +26,6 @@ import de.malkusch.amazon.ecs.configuration.MarketplaceLocation;
 import de.malkusch.amazon.ecs.throttle.ThrottledAWSECommerseServicePort;
 
 /**
- * Convenient API to Amazon's Product Advertising SOAP-API
- * <p>
- * This API signs the SOAP messages for you. You have to provide an implementation
- * of Configuration to make this API work properly. There exists an implementation
- * which uses Properties.
- * <p>
- * The underlying SOAP interface was generated with wsimport. You can still access
- * the generated Proxy by calling getPort(). If you do so, you would produce mostly
- * boiler plates. Use the API's ApiCall objects to avoid this.
- *
- * @author Markus Malkusch <markus@malkusch.de>
  * @see http://docs.amazonwebservices.com/AWSECommerceService/latest/DG/Welcome.html
  * @see http://docs.amazonwebservices.com/AWSECommerceService/latest/DG/APPNDX_SearchIndexValues.html
  */
@@ -95,6 +84,10 @@ public class ProductAdvertisingAPI {
             final public static String TOP_SELLERS = "TopSellers";
         }
 
+        static final public class Cart {
+            final public static String Cart = "Cart";
+        }
+
         final public static String ACCESSORIES = "Accessories";
         final public static String BROWSE_NODES = "BrowseNodes";
         final public static String EDITORTIAL_REVIEW = "EditorialReview";
@@ -107,6 +100,7 @@ public class ProductAdvertisingAPI {
         final public static String OFFERS = "Offers";
         final public static String PROMOTION_SUMMARY = "PromotionSummary";
         final public static String OFFER_SUMMARY = "OfferSummary";
+        final public static String OFFER_LISTING = "OfferListings";
         final public static String RELATED_ITEMS = "RelatedItems";
         final public static String REVIEWS = "Reviews";
         final public static String SALES_RANK = "SalesRank";
@@ -140,6 +134,7 @@ public class ProductAdvertisingAPI {
             port = new ThrottledAWSECommerseServicePort(port, configuration.getThrottle());
         }
         appendHandler(new SignatureHandler(configuration));
+        appendHandler(new SOAPLoggingHandler());
     }
 
     private AWSECommerceServicePortType createPort(final MarketplaceLocation location) {
@@ -230,25 +225,13 @@ public class ProductAdvertisingAPI {
     }
 
     /**
-     * Returns the ApiCall object for modifying an existing remote shopping cart.
-     * <p>
-     * Modifying means changing the quantity, removing an item (quantity = 0) and moving
-     * items form the active area of a cart to the SaveForLater area or the reverse.
-     * <p>
-     * <code>
-     * CartModifyRequest request = api.getCartModify().buildRequest(existingCart);
-     * request.setItems(new CartModifyRequest.Items());
-     * CartModifyRequest.Items.Item removedItem = new CartModifyRequest.Items.Item();
-     * removedItem.setCartItemId(cartItemId);
-     * removedItem.setQuantity(BigInteger.valueOf(0));
-     * request.getItems().getItem().add(removedItem);
-     * Cart updatedCart = api.getCartModify().call(request);
-     * </code>
+     * That's just not working and I have no idea why.
+     * AWS returns empty response - please consider using REST API as that is showing perfect
+     * results on tests.
      *
-     * @see http://docs.amazonwebservices.com/AWSECommerceService/latest/DG/CartModify.html
      */
     public CartModifyCall getCartModify() {
-        return cartModify;
+        throw new UnsupportedOperationException();
     }
 
     /**

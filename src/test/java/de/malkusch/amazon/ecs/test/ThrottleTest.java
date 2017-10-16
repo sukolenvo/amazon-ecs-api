@@ -1,6 +1,6 @@
 package de.malkusch.amazon.ecs.test;
 
-import com.ECS.client.jax.AWSECommerceServicePortType;
+import com.amazon.wsdl.AWSECommerceServicePortType;
 import de.malkusch.amazon.ecs.throttle.ThrottledAWSECommerseServicePort;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;

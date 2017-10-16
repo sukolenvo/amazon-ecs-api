@@ -5,3 +5,4 @@
 target
 src/test/resources/
 src/test/java/de/malkusch/amazon/ecs/test/sandbox
+*.iml

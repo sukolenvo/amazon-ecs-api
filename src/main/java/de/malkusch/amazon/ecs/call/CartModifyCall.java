@@ -1,15 +1,13 @@
 package de.malkusch.amazon.ecs.call;
 
-import java.util.List;
+import com.amazon.wsdl.Cart;
+import com.amazon.wsdl.CartModify;
+import com.amazon.wsdl.CartModifyRequest;
+import com.amazon.wsdl.OperationRequest;
+import de.malkusch.amazon.ecs.ProductAdvertisingAPI;
 
 import javax.xml.ws.Holder;
-
-import com.ECS.client.jax.Cart;
-import com.ECS.client.jax.CartModify;
-import com.ECS.client.jax.CartModifyRequest;
-import com.ECS.client.jax.OperationRequest;
-
-import de.malkusch.amazon.ecs.ProductAdvertisingAPI;
+import java.util.List;
 
 public class CartModifyCall extends CartCall<CartModify, CartModifyRequest> {
 
@@ -19,7 +17,7 @@ public class CartModifyCall extends CartCall<CartModify, CartModifyRequest> {
 
 	@Override
 	protected void call(CartModify call,
-			Holder<OperationRequest> operationRequest, Holder<List<Cart>> result) {
+						Holder<OperationRequest> operationRequest, Holder<List<Cart>> result) {
 
 		api.getPort().cartModify(call.getMarketplaceDomain(),
 				call.getAWSAccessKeyId(), call.getAssociateTag(),

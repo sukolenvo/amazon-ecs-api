@@ -5,10 +5,10 @@ import static org.junit.Assert.assertEquals;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
+import com.amazon.wsdl.ItemSearchRequest;
+import com.amazon.wsdl.Items;
 import org.junit.Test;
 
-import com.ECS.client.jax.ItemSearchRequest;
-import com.ECS.client.jax.Items;
 
 import de.malkusch.amazon.ecs.exception.RequestException;
 

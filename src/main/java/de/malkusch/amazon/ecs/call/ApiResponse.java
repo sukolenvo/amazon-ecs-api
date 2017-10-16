@@ -1,6 +1,7 @@
 package de.malkusch.amazon.ecs.call;
 
-import com.ECS.client.jax.Request;
+
+import com.amazon.wsdl.Request;
 
 public interface ApiResponse {
 

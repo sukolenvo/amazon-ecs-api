@@ -1,7 +1,6 @@
 package de.malkusch.amazon.ecs.throttle;
 
-import com.ECS.client.jax.*;
-import com.google.common.util.concurrent.RateLimiter;
+import com.amazon.wsdl.*;
 import lombok.experimental.Delegate;
 
 import javax.xml.ws.BindingProvider;

@@ -11,6 +11,23 @@ code by giving you ApiCall objects.
 This API is build upon a JAX-WS client. This API is
 [not thread safe as the JAX-WS client](https://cwiki.apache.org/CXF/faq.html#FAQ-AreJAXWSclientproxiesthreadsafe%253F). 
 
+# Build
+    
+`mvn clean package [-Dmaven.skip.test=true]`
+
+**Note**: CartModify request is not working (without eny error from Amazon side).
+
+# Tests
+
+To launch tests please create **amazon.properties** file in test/resources folder. It
+should contain 3 lines:
+
+amazon.accessKey=*your access key*
+amazon.secretKey=*your secret key*
+amazon.associateTag=*your associate tag*
+
+Important - tests expect US region credentials. Otherwise most tests will fail with "Invalid 
+Product ID" error.
 
 # Example
 Have a look at this example how to use the API with a bit more convenient API.

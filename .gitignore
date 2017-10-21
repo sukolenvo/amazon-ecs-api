@@ -3,6 +3,6 @@
 .project
 .idea
 target
-src/test/resources/amazon.properties
+amazon.properties
 src/test/java/de/malkusch/amazon/ecs/test/sandbox
 *.iml
